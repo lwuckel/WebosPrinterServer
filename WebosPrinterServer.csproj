@@ -11,6 +11,7 @@
     <AssemblyName>WebosPrinterServer</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <ApplicationIcon>printer.ico</ApplicationIcon>
+    <StartupObject>WebosPrinter.MainClass</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,7 +46,6 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Net\PrintServer.cs" />
     <Compile Include="Net\SnmpPrinterAgent.cs" />
@@ -55,6 +55,8 @@
     <Compile Include="Net\PrintJobListener.cs" />
     <Compile Include="IO\PclFileReader.cs" />
     <Compile Include="WebOsPrinterServer.cs" />
+    <Compile Include="Main.cs">
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -62,6 +64,8 @@
     <Folder Include="IO\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="print.sh" />
+    <None Include="print.sh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
